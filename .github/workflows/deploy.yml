@@ -24,6 +24,11 @@ jobs:
       - name: Build project
         run: npm run docs:build
 
+      - name: Verify build output
+        run: |
+          echo "Build output:"
+          ls -R docs/.vitepress/dist
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
