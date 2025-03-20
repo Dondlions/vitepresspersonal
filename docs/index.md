@@ -9,10 +9,10 @@ hero:
   actions:
     - theme: brand
       text: Markdown 示例
-      link: /example/markdown-examples
+      link: example/markdown-examples
     - theme: alt
       text: API 示例
-      link: /example/api-examples
+      link: example/api-examples
 features:
   - title: 极快的构建速度🚀
     details: VitePress利用Vite的快速构建能力，能够在极短的时间内生成静态站点。无论是开发过程中的热更新，还是最终的构建，都能让开发者感受到前所未有的速度。这对于提高开发效率、减少等待时间至关重要
