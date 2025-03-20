@@ -305,7 +305,7 @@ export default {
 
 组件系统让我们可以用独立可复用的小组件来构建大型应用，几乎任意类的应用的界面都可以抽象为一个组件树
 
-![组件](./public/component.png)
+![组件](../public/component.png)
 
 `components` 是 Vue 中的组件，用来定义组件，组件可以复用
 
@@ -475,7 +475,7 @@ export default {};
 
 一般会在项目中创建专门的`router`文件夹来存放路由相关的文件，主要是`index.js`文件，也就是路由设置
 
-![路由](./public/router.png)
+![路由](../public/router.png)
 
 ## vue3 路由设置
 

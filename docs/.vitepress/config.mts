@@ -17,14 +17,14 @@ export default defineConfig({
           {
             text: "vue3",
             items: [
-              { text: "vue3基础", link: "/vue3_foundation" },
+              { text: "vue3基础", link: "tutorial/vue3_foundation" },
               { text: "vue添加组件", link: "/" }
             ]
           },
           { text: "vitepress", link: "/" }
         ]
       },
-      { text: "关于我", link: "aboutmyself" }
+      { text: "关于我", link: "self_part/aboutmyself" }
     ],
 
     socialLinks: [{ icon: "wechat", link: "" }],
