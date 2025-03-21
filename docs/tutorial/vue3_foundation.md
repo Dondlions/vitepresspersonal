@@ -790,3 +790,112 @@ axios 的请求方法都支持 async/await 语法
 
 4.异步生命周期钩子：vue3 允许在生命周期钩子中使用异步操作
 :::
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+---
+
+# vue3 状态管理
+
+## 状态管理的作用
+
+状态管理是 Vue3 中非常重要的一部分，它可以帮助我们更好地管理组件之间的状态，避免数据混乱和重复。状态管理可以帮助我们更好地组织和管理应用程序的状态，使得应用程序更加易于维护和扩展。
+
+## 状态管理的实现
+
+在 Vue3 中，可以使用 Vuex 或 Pinia 来实现状态管理。Vuex 是 Vue 官方提供的状态管理库，而 Pinia 是一个社区驱动的状态管理库，它提供了更简洁的 API 和更好的 TypeScript 支持。
+
+## Pinia 安装
+
+```sh
+npm install pinia
+```
+
+## Pinia 的封装
+
+在 src 目录下创建 store 目录，在 store 目录下创建一个 index.ts 文件，用于统一管理 store
+
+Store 是用 defineStore() 定义的，它的第一个参数要求是一个独一无二的名字：
+
+```js
+import { defineStore } from "pinia";
+
+// 你可以任意命名 `defineStore()` 的返回值，但最好使用 store 的名字，同时以 `use` 开头且以 `Store` 结尾。
+// (比如 `useUserStore`，`useCartStore`，`useProductStore`)
+// 第一个参数是你的应用中 Store 的唯一 ID。
+export const useAlertsStore = defineStore("alerts", {
+  // 其他配置...
+});
+```
+
+这个名字 ，也被用作 id ，是必须传入的， Pinia 将用它来连接 store 和 devtools。为了养成习惯性的用法，将返回的函数命名为 use... 是一个符合组合式函数风格的约定。
+
+defineStore() 的第二个参数可接受两类值：Setup 函数或 Option 对象。
+
+---
+
+### Option Store
+
+与 Vue 的选项式 API 类似，我们也可以传入一个带有 state、actions 与 getters 属性的 Option 对象
+
+```js
+export const useCounterStore = defineStore("counter", {
+  state: () => ({ count: 0, name: "Eduardo" }),
+  getters: {
+    doubleCount: state => state.count * 2
+  },
+  actions: {
+    increment() {
+      this.count++;
+    }
+  }
+});
+```
+
+你可以认为 state 是 store 的数据 (data)，getters 是 store 的计算属性 (computed)，而 actions 则是方法 (methods)。
+
+为方便上手使用，Option Store 应尽可能直观简单。
+
+---
+
+### Setup Store
+
+也存在另一种定义 store 的可用语法。与 Vue 组合式 API 的 setup 函数 相似，我们可以传入一个函数，该函数定义了一些响应式属性和方法，并且返回一个带有我们想暴露出去的属性和方法的对象。
+
+```js
+export const useCounterStore = defineStore("counter", () => {
+  const count = ref(0);
+  const doubleCount = computed(() => count.value * 2);
+  function increment() {
+    count.value++;
+  }
+
+  return { count, doubleCount, increment };
+});
+```
+
+在 Setup Store 中：
+
+- `ref()` 就是 `state` 属性
+- `computed()` 就是 `getters` 属性
+- `function()` 就是 `actions` 属性
+
+注意，要让 pinia 正确识别 state，你必须在 setup store 中返回 state 的所有属性。这意味着，你不能在 store 中使用私有属性。不完整返回会影响 SSR ，开发工具和其他插件的正常运行。
+
+## 使用 Store
+
+虽然我们前面定义了一个 store，但在我们使用 `<script setup>` 调用 `useStore()`(或者使用 `setup()` 函数，像所有的组件那样) 之前，store 实例是不会被创建的：
+
+```vue
+<script setup>
+import { useCounterStore } from "@/stores/counter";
+// 可以在组件中的任意位置访问 `store` 变量 ✨
+const store = useCounterStore();
+</script>
+```
