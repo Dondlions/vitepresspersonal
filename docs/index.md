@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "@假身's个人博客"
-  text: "基于vitepress的项目"
+  text: "我义无反顾的选择红丸"
   tagline: A programmer who is fixing bugs😭
   actions:
     - theme: brand
