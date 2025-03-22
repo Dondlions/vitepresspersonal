@@ -1,4 +1,6 @@
 // 导入 defineConfig 函数，用于配置 VitePress 站点
+import { link } from "fs";
+import { text } from "stream/consumers";
 import { defineConfig } from "vitepress";
 
 // https://vitepress.dev/reference/site-config
@@ -16,12 +18,15 @@ export default defineConfig({
         items: [
           {
             text: "vue3",
-            items: [
-              { text: "vue3基础", link: "tutorial/vue3_foundation" },
-              { text: "vue添加组件", link: "/" }
-            ]
+            items: [{ text: "vue3基础", link: "tutorial/vue3_foundation" }]
           },
-          { text: "vitepress", link: "/" }
+          {
+            text: "Elementplus",
+            items: [
+              { text: "vue3集成", link: "tutorial/elementplus_vue3" },
+              { text: "vitepress集成", link: "tutorial/elementplus_vitepress" }
+            ]
+          }
         ]
       },
       { text: "关于我", link: "self_part/aboutmyself" }
