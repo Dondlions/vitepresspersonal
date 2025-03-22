@@ -1,6 +1,4 @@
 // 导入 defineConfig 函数，用于配置 VitePress 站点
-import { link } from "fs";
-import { text } from "stream/consumers";
 import { defineConfig } from "vitepress";
 
 // https://vitepress.dev/reference/site-config
