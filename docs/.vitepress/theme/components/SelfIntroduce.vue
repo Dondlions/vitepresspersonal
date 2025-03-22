@@ -51,6 +51,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { useRouter } from "vitepress";
+import me from "../assets/me.jpg";
 
 // 获取路由实例
 const router = useRouter();
@@ -61,7 +62,7 @@ const title = ref("前端开发者 | 技术爱好者");
 const description = ref(
   "大家好，我是假身，一名热爱前端开发的技术爱好者。我喜欢探索新技术，分享学习经验，并致力于打造优雅、高效的用户体验。欢迎访问我的博客，了解更多关于我的项目和教程。"
 );
-const photoUrl = ref("/me.jpg"); // 替换为你的照片 URL
+const photoUrl = ref(me); // 替换为你的照片 URL
 
 // 社交链接
 const socialLinks = ref([
