@@ -86,3 +86,34 @@ export default {
 ```
 
 仔细观察，发现其结构和 vue3 的 main.ts 文件非常相似，所以我们可以大胆的猜测，vitepress 的 theme 文件就是 vue3 的 main.ts 文件，天才般的发现！:)
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+---
+
+# 开始使用
+
+经过上面的准备操作，现在就可以正式开始使用 elementplus 的组件库了
+
+## 自定义组件
+
+首先在`theme`文件夹下创建一个`components`文件夹，然后在其中创建一个`自定义文件名.vue`的文件，文件内容是你想使用的各种 elementplus 组件：
+![自定义组件](../public/clickbutton.png)
+![组件内容](../public/cilckbuttoninside.png)
+
+<br>
+
+然后在 `index.ts` 文件中引入这个组件，并注册：
+![注册组件](../public/signcomponent.png)
+
+## 使用实例
+
+<clickbutton/>
+
+:::warning
+markwown 中不能直接使用 vue3 中的 script，所以需要写单独的自定义组件
+:::
