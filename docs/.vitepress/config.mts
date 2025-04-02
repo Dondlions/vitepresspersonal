@@ -19,18 +19,29 @@ export default defineConfig({
             items: [{ text: "vue3基础", link: "tutorial/vue3_foundation" }]
           },
           {
+            text: "spring",
+            items: [{ text: "spring基础", link: "tutorial/spring_foundation" }]
+          },
+          {
             text: "Elementplus",
             items: [
               { text: "vue3集成", link: "tutorial/elementplus_vue3" },
               { text: "vitepress集成", link: "tutorial/elementplus_vitepress" }
             ]
+          },
+          {
+            text: "springboot",
+            items: [{ text: "问题中心", link: "tutorial/springboot_questions" }]
           }
         ]
       },
       { text: "关于我", link: "self_part/aboutmyself" }
     ],
 
-    socialLinks: [{ icon: "wechat", link: "" }],
+    socialLinks: [
+      { icon: "github", link: "https://github.com/Dondlions" },
+      { icon: "wechat", link: "/" }
+    ],
 
     lastUpdated: {
       text: "最后更新于：",
@@ -44,6 +55,10 @@ export default defineConfig({
       level: [1, 6],
       label: "本页目录",
       collapseDepth: 1
-    } as { level: [number, number]; label: string; collapseDepth: number }
+    } as { level: [number, number]; label: string; collapseDepth: number },
+
+    footer: {
+      copyright: "© 2025 假身. AIK | ISS."
+    }
   }
 });

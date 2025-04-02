@@ -4,8 +4,8 @@ layout: home
 
 hero:
   name: "@假身's个人博客"
-  text: "我义无反顾的选择红丸"
-  tagline: A programmer who is fixing bugs😭
+  text: "我义无反顾选择红丸"
+  tagline: oh！oh！ bug maker!😭
   actions:
     - theme: brand
       text: Markdown 示例
@@ -20,4 +20,10 @@ features:
     details: VitePress的配置非常简洁，开发者可以通过一个简单的配置文件来定制自己的站点。相比其他静态站点生成器复杂的配置选项，VitePress让开发者能够更加专注于内容的创作，而不是花费大量时间在配置上
   - title: 强大的主题系统🔮
     details: VitePress提供了丰富的主题选择，开发者可以根据自己的喜好和需求选择不同的主题。同时，VitePress也支持自定义主题，让开发者能够打造出独一无二的站点风格。
+  - title: C++
+    details: 熟悉C++编程语言，具备一定的C++开发经验，能够熟练使用C++进行编程和调试。
+  - title: vue3
+    details: 熟悉Vue3框架，具备一定的Vue3开发经验，能够使用Vue3进行前端开发。
+  - title: vitepress
+    details: 熟悉VitePress框架，具备一定的VitePress开发经验，能够使用VitePress进行静态站点生成。
 ---
