@@ -30,7 +30,7 @@ Spring 有两个核心模块：**_IoC_** 和 **_AOP_**。
 
 IoC 是一种控制反转的思想，而 IoC 的实现方式是：DI（Dependency Injection）依赖注入
 
-### IoC、Bean、DI 的关系
+### IoC、Bean、DI 的关系（抽象）
 
 Bean 是士兵，DI 是补给系统，IoC 容器是军队后勤部
 
