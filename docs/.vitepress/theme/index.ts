@@ -3,7 +3,7 @@ import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";
 import clickbutton from "./components/clickbutton.vue";
 import SelfIntroduce from "./components/SelfIntroduce.vue";
-import test from "./components/test.vue";
+
 import "./style.css";
 
 export default {
@@ -16,6 +16,5 @@ export default {
     app.use(ElementPlus);
     app.component("clickbutton", clickbutton);
     app.component("SelfIntroduce", SelfIntroduce);
-    app.component("test", test);
   }
 };
